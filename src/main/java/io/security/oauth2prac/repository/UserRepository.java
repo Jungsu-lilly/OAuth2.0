@@ -12,7 +12,7 @@ public class UserRepository {
     private Map<String, Object> users = new HashMap<>();
 
     public User findByUsername(String username){
-        if(users.containsKey("username")){
+        if(users.containsKey(username)){
             return (User)users.get(username);
         }
         return null;

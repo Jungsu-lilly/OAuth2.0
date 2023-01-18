@@ -4,7 +4,6 @@ import lombok.Builder;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 
-import javax.persistence.Entity;
 import java.util.List;
 
 @Data

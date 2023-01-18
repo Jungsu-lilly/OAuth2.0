@@ -26,7 +26,7 @@ public abstract class AbstractOAuth2UserService {
             String registrationId = userRequest.getClientRegistration().getRegistrationId();
             userService.register(registrationId, providerUser);
         }else{
-            System.out.println("user = " + user);
+            System.out.println("userRequest = " + userRequest);
         }
     }
 
@@ -34,9 +34,11 @@ public abstract class AbstractOAuth2UserService {
         String registrationId = clientRegistration.getRegistrationId();
         if(registrationId.equals("keycloak")){
             return new KeycloakUser(oAuth2User, clientRegistration);
-        }else if(registrationId.equals("google")){
+        }
+        else if(registrationId.equals("google")){
             return new GoogleUser(oAuth2User, clientRegistration);
-        }else if(registrationId.equals("naver")){
+        }
+        else if(registrationId.equals("naver")){
             return new NaverUser(oAuth2User, clientRegistration);
         }
         return null;

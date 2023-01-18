@@ -25,7 +25,7 @@ public class CustomOidcUserService extends AbstractOAuth2UserService implements 
         // 회원가입
         super.register(providerUser, userRequest);
 
-        return null;
+        return oidcUser;
     }
 
 
